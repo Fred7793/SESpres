@@ -1,0 +1,139 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffca4;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Conteneur principal de la grille et des logos */
+.container {
+    display: flex;
+    justify-content: center; /* Centre la grille horizontalement */
+    align-items: center; /* Centre verticalement tout le contenu */
+    position: relative;
+    margin: 0 auto;
+    height: 100vh; /* Occupe toute la hauteur de la page */
+}
+
+/* Conteneur des logos et du titre */
+.logo-container {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments en colonne */
+    justify-content: center; /* Centre les éléments verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    margin-right: 20px; /* Espace entre les logos et la grille */
+    height: 100%; /* Assure que le conteneur occupe toute la hauteur */
+}
+
+/* Style du titre */
+.titre {
+    font-size: 40px; /* Taille du texte du titre */
+    font-weight: bold;
+    color: #1275ff; /* Couleur du texte */
+    margin: 50px 0; /* Ajoute un espace au-dessus et en dessous du titre */
+    text-align: center;
+}
+
+/* Style du logo du haut */
+.logo-haut {
+    width: 200px; /* Ajustez la taille du logo du haut */
+    height: auto;
+    margin-bottom: 20px; /* Espace entre le logo du haut et le titre */
+}
+
+/* Style du logo du bas */
+.logo-bas {
+    width: 250px; /* Ajustez la taille du logo du bas */
+    height: auto;
+    margin-top: 20px; /* Espace entre le logo du bas et le titre */
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    grid-gap: 20px;
+    position: relative;
+    z-index: 1; /* Doit être sous le canevas et la superposition de texte */
+}
+
+.case {
+    width: 240px;
+    height: 240px;
+    background-color: #fff;
+    border: 2px solid #000;
+    text-align: center;
+    /* Propriétés de police */
+    font-family: 'Arial', sans-serif; /* Police de caractères */
+    font-size: 24px; /* Taille de la police */
+    font-weight: bold; /* Épaisseur de la police */
+    color: #000; /* Couleur du texte */
+    line-height: normal; /* Pour permettre plusieurs lignes si nécessaire */
+    padding: 10px; /* Espacement intérieur pour le texte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#scratchCanvas {
+    position: absolute;
+    z-index: 2; /* Au-dessus de la grille, sous la superposition de texte */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-gap: 10px;
+    pointer-events: none; /* Permettre le grattage à travers la superposition */
+    z-index: 3; /* Au-dessus du canevas */
+}
+
+.text-case {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px; /* Ajustez la taille du texte selon vos besoins */
+    font-weight: bold;
+    color: white; /* Couleur du texte sur le grattage */
+}
+
+.image-case {
+    max-width: 100%; /* L'image s'adapte à la largeur de la case */
+    max-height: 100%; /* L'image s'adapte à la hauteur de la case */
+    object-fit: contain; /* Garde l'image proportionnelle à l'intérieur de la case */
+}
+
+.video-case {
+    max-width: 100%; /* La vidéo s'adapte à la largeur de la case */
+    max-height: 100%; /* La vidéo s'adapte à la hauteur de la case */
+    object-fit: scale-down; /* Garde la vidéo proportionnelle à l'intérieur de la case */
+}
+
+/* Bouton de redirection */
+.redirect-button {
+    margin-top: 20px; /* Espace entre le bouton et le logo du bas */
+    padding: 10px 20px; /* Taille du bouton */
+    background-color: #4CAF50; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: none;
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    display: block; /* Assure que le bouton est en bloc */
+}
+
+.redirect-button:hover {
+    background-color: #45a049; /* Couleur de fond au survol */
+}
+
